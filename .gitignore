@@ -2,3 +2,5 @@ base.json
 .vscode
 ex_files.json
 *.pyc
+github_api.py 
+cmtgit.py  
