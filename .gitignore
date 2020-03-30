@@ -1,3 +1,4 @@
 base.json
 .vscode
 ex_files.json
+*.pyc

@@ -61,14 +61,17 @@ def m():
 
     excluese_file = get_json('ex_files.json')
     idx = 0
-    for file in get_files('.', excluese_file):
+    print len(times)
+    for file in get_files('./leecode', excluese_file):
+        basename = file.split('/')[-1]
 
-        excluese_file.append(os.path.basename(file))
-        time = times[idx]
-        fackaddfile(file, time+' {}:{}:{}'.format(get_radom(8, 20), get_radom(0, 60), get_radom(0, 60)))
-        excluese_times.append(time)
-        # print time, file
-        idx += 1
+        if basename not in excluese_file:
+            time = times[idx]
+            fackaddfile(file, time+' {}:{}:{}'.format(get_radom(8, 20), get_radom(0, 60), get_radom(0, 60)))
+            idx += 1
+
+            excluese_file.append(basename)
+            excluese_times.append(time)
 
     dumps(excluese_times, 'base.json')
     dumps(excluese_file, 'ex_files.json')

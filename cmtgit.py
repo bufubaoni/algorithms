@@ -3,12 +3,13 @@ import os
 
 
 def addfile(file_name):
-    cmd = 'git add {}'.format(file_name)
+    cmd = 'git add "{}"'.format(file_name)
     os.popen(cmd)
 
 
 def commit(file_name):
-    cmd = "git commit -m 'add {}'".format(os.path.basename(file_name))
+    basename = file_name.split('/')[-1]
+    cmd = "git commit -m 'add {}'".format(basename)
     os.popen(cmd)
 
 
