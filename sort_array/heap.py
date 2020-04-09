@@ -29,6 +29,9 @@ def heepSort(nums):
         # 重新排序
         max_heapify(nums, 0, i)
 
+def sortArray(nums):
+    heepSort(nums)
+    return nums
 
 if __name__ == "__main__":
-    print heepSort([2,1,3,4,5,56,1,12,32])
+    print sortArray([2,1,3,4,5,56,1,12,32])
