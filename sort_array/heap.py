@@ -42,10 +42,11 @@ def heap_sort(nums):
     build_heap(nums, ln)
     # 最后一个 和 最顶上的交换，然后从新调整堆
     for i in range(ln-1, -1, -1):
-        nums[i], nums[0] = nums[0], nums[i]
-        heapify(nums, i, 0)
+        if nums[i] < nums[0]:
+            nums[i], nums[0] = nums[0], nums[i]
+            heapify(nums, i, 0)
     return nums
 
 
 if __name__ == "__main__":
-    print heap_sort([2,1,3,4,5,56,1,12,32])
+    print heap_sort([1,3])
