@@ -4,12 +4,12 @@ class NumArray(object):
         """
         :type nums: List[int]
         """
-        
+
         self.data = [0]
 
         for idx in range(len(nums)):
             self.data.append(nums[idx] + self.data[idx])
-        
+
         # print self.data
 
     def sumRange(self, i, j):
