@@ -29,7 +29,6 @@ def get_sub(nums, k):
 
     for idx, item in enumerate(nums):
         su += item
-
         if su - k in cul:
             for start in cul[su-k]:
                 if (start, idx) not in res:
@@ -44,5 +43,3 @@ def get_sub(nums, k):
 
 if __name__ == "__main__":
     print(get_sub([1, 1, 1], 2))
-
-    print([1, 1, 1][-1:2])
